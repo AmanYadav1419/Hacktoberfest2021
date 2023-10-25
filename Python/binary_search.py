@@ -27,13 +27,13 @@ def binary_search(list1, n):
   
   
 # Initial list1  
-list1 = [12, 24, 32, 39, 45, 50, 54]  
+list1 = [12, 24, 32, 39, 45, 50, 54]
 n = 45  
-  
+
 # Function call   
 result = binary_search(list1, n)  
-  
+
 if result != -1:  
-    print("Element is present at index", str(result))  
+    print("Element is present at index", result)
 else:  
     print("Element is not present in list1") 

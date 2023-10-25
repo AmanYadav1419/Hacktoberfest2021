@@ -7,5 +7,5 @@ for i in range(len(A)):
    #swap
 A[i], A[min_] = A[min_], A[i]
 # main
-for i in range(len(A)):
-   print(A[i])
+for item in A:
+   print(item)

@@ -1,9 +1,9 @@
 from itertools import groupby
 n=262141
 rem=""
-while(n!=0):
+while (n!=0):
     rem+=str(n%2)
-    n=n//2
+    n //= 2
 binary_num=int(rem[:: -1])
 print(binary_num)
 groups = groupby(str(binary_num))
@@ -11,10 +11,10 @@ result = [(label, sum(1 for _ in group)) for label, group in groups]
 print(result)
 size1=len(result)-1
 max=0
-for i in range(len(result)):
-    if(result[i][0]=='1'):
-        if(result[i][1]>result[size1][1] or result[i][1]==result[size1][1]):
-            max=result[i][1]
+for item in result:
+    if item[0] == '1':
+        if item[1] > result[size1][1] or item[1] == result[size1][1]:
+            max = item[1]
     size1-=1
 print(max)
 """

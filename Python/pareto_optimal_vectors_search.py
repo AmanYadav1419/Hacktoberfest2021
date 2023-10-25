@@ -25,8 +25,7 @@ def get_min_diff(arr1, arr2):
   for i in range(len(arr1)):
     diff = arr1[i] - arr2[i]
     if min > diff:
-      min = diff
-      return min
+      return diff
 
 # This is method performs optimization and find Pareto optimal vectors.
 def pareto(arr):
@@ -79,9 +78,7 @@ def maxmin(f, a):
   max_index = mins.index(max(mins))
   print('optimal vector:', f[max_index])
   print('minimal value of the optimal vector:', mins[max_index])
-  res_opt = 0
-  for i in range(len(f[max_index])):
-    res_opt += f[max_index][i] * a[i]
+  res_opt = sum(f[max_index][i] * a[i] for i in range(len(f[max_index])))
   print('value of the maxmin convolution for the optimal vector:', res_opt, '\n')
 
 # result of the linear convolution
