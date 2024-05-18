@@ -6,6 +6,6 @@ for _ in range(n):
     args = s[1:]
     if (cmd !="print"):
         cmd += "("+ ",".join(args) +")"
-        eval("l."+cmd)
+        eval(f"l.{cmd}")
     else:
         print (l)

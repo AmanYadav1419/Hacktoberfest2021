@@ -1,11 +1,8 @@
 def swap_case(s):
-    a = ""
-    for let in s:
-        if (let.isupper() == True):
-            a+=(let.lower())
-        else:
-            a+=(let.upper())
-    return a
+    return "".join(
+        (let.lower()) if (let.isupper() == True) else (let.upper())
+        for let in s
+    )
 
 if __name__ == '__main__':
     s = input()

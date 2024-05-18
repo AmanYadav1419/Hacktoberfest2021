@@ -5,15 +5,11 @@ def game():
 score=game()
 with open("Highscore.txt") as f:
 	hiScoreStr=f.read()
-if hiScoreStr=='':
+if hiScoreStr == '' or int(hiScoreStr) < score:
 	with open("Highscore.txt","w") as f:
 		f.write(str(score))
 		print("updated")
-elif int(hiScoreStr)<score:
-	with open("Highscore.txt","w") as f:
-		f.write(str(score))
-		print("updated")
-elif int(hiScoreStr)>=score:
+else:
 	print(hiScoreStr)
 
 print("do you want to reset?")

@@ -27,9 +27,7 @@ print("φ(n):", n_e)
 
 # Function that perform calculation of the co-prime
 def ext_evcl(n_e, e):
-  matrix = []
-  matrix.append([n_e, 0, 1, 0])
-  matrix.append([e, 0, 0, 1])
+  matrix = [[n_e, 0, 1, 0], [e, 0, 0, 1]]
   last_elem = 1
   while matrix[last_elem][0] != 1 or matrix[last_elem][3] < 0:
     if matrix[last_elem][0] == 1:

@@ -17,7 +17,7 @@ print("h:", h)
 # Caluclation  of the ciphertext
 c1 = pow(g, k) % p
 c2 = pow(h, k) * m % p
-print("Ciphertext: (" + str(c1) + ", " + str(c2) + ")")
+print(f"Ciphertext: ({str(c1)}, {str(c2)})")
 
 # Description of the ciphertext
 decrypted_m = c2 * pow(c1, p - 1 - x) % p

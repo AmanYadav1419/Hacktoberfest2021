@@ -23,18 +23,16 @@ def job(searchString):
 
     div = soup.findAll('img',{'class':'yWs4tf'})
 
-    f= open("urls.txt","w+")
-    for i in div:
-        f.write(i['src']+'\n')
-    f.close()
-
+    with open("urls.txt","w+") as f:
+        for i in div:
+            f.write(i['src']+'\n')
     with open('urls.txt') as f:
         lines = [line.rstrip() for line in f]
 
 
     os.mkdir('kaks')
     for i,j in enumerate(lines):
-        jojo= urllib.request.urlretrieve(j,'img'+str(i)+'.jpg')
+        jojo = urllib.request.urlretrieve(j, f'img{str(i)}.jpg')
         os.rename(jojo[0], "kaks/"+jojo[0])
 
     shutil.make_archive('kaks', 'zip', 'kaks')
@@ -48,7 +46,7 @@ def email(usermail,password,clientemail):
     part = MIMEBase('application','octet-stream')
     part.set_payload((attachment).read())
     encoders.encode_base64(part)
-    part.add_header('Content-Disposition',"attachment; filename= "+filename)
+    part.add_header('Content-Disposition', f"attachment; filename= {filename}")
     msg.attach(part)
     text = msg.as_string()
     server=smtplib.SMTP_SSL("smtp.gmail.com",465)
